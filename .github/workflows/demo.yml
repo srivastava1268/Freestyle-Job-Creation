@@ -1,13 +1,17 @@
-name: Hellow World
+name: Create demo.yml
 
 on:
-push:
-branch: [main]
+  push:
+    branches:
+      - main
 
 jobs:
-demo:
-runs-on: ubuntu-latest
+  demo:
+    runs-on: ubuntu-latest
 
-steps:
--name: Greeting
-run: echo "Hello, world!"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print success message
+        run: echo "GitHub Actions is working successfully!"
